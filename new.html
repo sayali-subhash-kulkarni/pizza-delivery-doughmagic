@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="design.css" type="text/css">
+  <title>DoughMagic - Menu |We take care of your tastebuds</title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js">
+  </script>
+  <script>
+    function message()
+    {
+      alert("Your order will be delivered in 30 minutes");
+    }
+    $(function() {
+
+
+   var pizza = [];
+
+   $.getJSON('pizza.js', function(data) {
+       $.each(data.pizza, function(i, f) {
+          var tblRow = "<tr>" + "<td>" + f.p_name + "</td>" +
+           "<td>" + f.price + "</td>" + "<td>" + f.ingredients + "</td>"+"<td>" +"<button classs="+"butn"+" onclick="+"message()"+">Order now</button>"+"</td>"+"</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+  </script>
+</head>
+
+<body class="">
+  <nav class="navbar navbar-expand-md navbar-dark bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="images/logo.jpg" width="150" class="d-inline-block align-top bg-light" alt="" height="150"><b class="style bg-light text-dark w-75 h-75">  DoughMagic</b> </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent"> </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar3SupportedContent" aria-controls="navbar3SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse text-center justify-content-start" id="navbar3SupportedContent">
+        <ul class="navbar-nav text-left">
+          <li class="nav-item dropdown text-left bg-success">
+            <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" target="_blank">Our Menu</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="new.html">Veg Pizza</a>
+              <a class="dropdown-item" href="new.html">Non-veg pizza</a>
+              <a class="dropdown-item" href="new.html">appetizers and beverages</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="">Finger licking Menu</h1>
+        </div>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="profile">
+        <table id="userdata" border="2" class="w-100 h-100 my-5 tbl-header tbl-content h d">
+          <thead>
+            <tr> </tr>
+          </thead>
+          <tbody> </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="py-5 bg-dark text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9"> Show love to DoughMagic by following us on </div>
+          <div class="col-4 col-md-1 align-self-center">
+            <a href="https://www.facebook.com" target="_blank"><i class="fa fa-fw fa-facebook fa-3x text-white"></i></a>
+          </div>
+          <div class="col-4 col-md-1 align-self-center">
+            <a href="https://twitter.com" target="_blank"><i class="fa fa-fw fa-twitter fa-3x text-white"></i></a>
+          </div>
+          <div class="col-4 col-md-1 align-self-center">
+            <a href="https://www.instagram.com" target="_blank"><i class="fa fa-fw fa-instagram text-white fa-3x"></i></a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mt-3 text-center">
+            <p>© Copyright 2018 DoughMagic - All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:180px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo&nbsp;&nbsp;
+      <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
+    </pingendo>
+  </div>
+</body>
+
+</html>
